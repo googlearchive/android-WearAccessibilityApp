@@ -83,11 +83,8 @@ public class LongListActivity extends Activity implements AmbientMode.AmbientCal
                         });
         WearableRecyclerView recyclerView = findViewById(R.id.recycler_view_long_list);
 
-        // Aligns the first and last items on the list vertically centered on the screen.
-        recyclerView.setEdgeItemsCenteringEnabled(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(false);
-
 
         recyclerView.setAdapter(mAdapter); // Set adapter to the recyclerView.
 

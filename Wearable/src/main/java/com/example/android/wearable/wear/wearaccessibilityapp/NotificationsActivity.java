@@ -224,8 +224,7 @@ public class NotificationsActivity extends Activity implements AmbientMode.Ambie
 
             // Notification Channel Id is ignored for Android pre O (26).
             NotificationCompat.Builder notificationCompatBuilder =
-                    new NotificationCompat.Builder(
-                            context, notificationChannelId);
+                    new NotificationCompat.Builder(context, notificationChannelId);
 
             GlobalNotificationBuilder.setNotificationCompatBuilderInstance(
                     notificationCompatBuilder);
@@ -246,11 +245,11 @@ public class NotificationsActivity extends Activity implements AmbientMode.Ambie
                             Integer.toString(messagingStyleCommsAppData.getNumberOfNewMessages()))
                     .addAction(replyAction)
                     .setCategory(Notification.CATEGORY_MESSAGE)
-                    .setPriority(messagingStyleCommsAppData.getPriority())
 
-                    // Sets priority for 25 and below. For 26 and above, 'priority' is deprecated for
-                    // 'importance' which is set in the NotificationChannel. The integers representing
-                    // 'priority' are different from 'importance', so make sure you don't mix them.
+                    // Sets priority for 25 and below. For 26 and above, 'priority' is deprecated
+                    // for 'importance' which is set in the NotificationChannel. The integers
+                    // representing 'priority' are different from 'importance', so make sure you
+                    // don't mix them.
                     .setPriority(messagingStyleCommsAppData.getPriority())
 
                     // Sets lock-screen visibility for 25 and below. For 26 and above, lock screen
@@ -275,8 +274,7 @@ public class NotificationsActivity extends Activity implements AmbientMode.Ambie
         }
 
         private String createNotificationChannel(
-                Context context,
-                MockDatabase.MessagingStyleCommsAppData mockNotificationData) {
+                Context context, MockDatabase.MessagingStyleCommsAppData mockNotificationData) {
 
             // NotificationChannels are required for Notifications on O (API 26) and above.
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -301,10 +299,11 @@ public class NotificationsActivity extends Activity implements AmbientMode.Ambie
                 notificationChannel.setLockscreenVisibility(channelLockscreenVisibility);
 
                 // Adds NotificationChannel to system. Attempting to create an existing notification
-                // channel with its original values performs no operation, so it's safe to perform the
-                // below sequence.
+                // channel with its original values performs no operation, so it's safe to perform
+                // the below sequence.
                 NotificationManager notificationManager =
-                        (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                        (NotificationManager)
+                                context.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.createNotificationChannel(notificationChannel);
 
                 return channelId;
