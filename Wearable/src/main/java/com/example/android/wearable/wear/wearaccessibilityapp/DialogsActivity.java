@@ -15,13 +15,13 @@
  */
 package com.example.android.wearable.wear.wearaccessibilityapp;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.wear.ambient.AmbientMode;
+import android.support.v4.app.FragmentActivity;
+import android.support.wear.ambient.AmbientModeSupport;
 import android.support.wearable.view.AcceptDenyDialog;
 import android.support.wearable.view.WearableDialogHelper.DialogBuilder;
 import android.view.LayoutInflater;
@@ -34,7 +34,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class DialogsActivity extends Activity implements AmbientMode.AmbientCallbackProvider {
+public class DialogsActivity extends FragmentActivity implements
+        AmbientModeSupport.AmbientCallbackProvider {
 
     private List<DialogsItem> mItems;
     public View mView;
@@ -44,7 +45,7 @@ public class DialogsActivity extends Activity implements AmbientMode.AmbientCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialogs);
 
-        AmbientMode.attachAmbientSupport(this);
+        AmbientModeSupport.attach(this);
 
         // Supplier objects
         Supplier<Dialog> twoActionDialog =
@@ -183,9 +184,9 @@ public class DialogsActivity extends Activity implements AmbientMode.AmbientCall
     }
 
     @Override
-    public AmbientMode.AmbientCallback getAmbientCallback() {
+    public AmbientModeSupport.AmbientCallback getAmbientCallback() {
         return new MyAmbientCallback();
     }
 
-    private class MyAmbientCallback extends AmbientMode.AmbientCallback {}
+    private class MyAmbientCallback extends AmbientModeSupport.AmbientCallback {}
 }

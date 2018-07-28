@@ -15,7 +15,6 @@
  */
 package com.example.android.wearable.wear.wearaccessibilityapp;
 
-import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -30,15 +29,17 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.MessagingStyle;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.RemoteInput;
 import android.support.v4.content.ContextCompat;
-import android.support.wear.ambient.AmbientMode;
+import android.support.wear.ambient.AmbientModeSupport;
 import android.util.Log;
 
-public class NotificationsActivity extends Activity implements AmbientMode.AmbientCallbackProvider {
+public class NotificationsActivity extends FragmentActivity implements
+        AmbientModeSupport.AmbientCallbackProvider {
 
     public static final int NOTIFICATION_ID = 888;
 
@@ -46,7 +47,7 @@ public class NotificationsActivity extends Activity implements AmbientMode.Ambie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AmbientMode.attachAmbientSupport(this);
+        AmbientModeSupport.attach(this);
 
         // Display the fragment as the main content.
         getFragmentManager()
@@ -315,9 +316,9 @@ public class NotificationsActivity extends Activity implements AmbientMode.Ambie
     }
 
     @Override
-    public AmbientMode.AmbientCallback getAmbientCallback() {
+    public AmbientModeSupport.AmbientCallback getAmbientCallback() {
         return new MyAmbientCallback();
     }
 
-    private class MyAmbientCallback extends AmbientMode.AmbientCallback {}
+    private class MyAmbientCallback extends AmbientModeSupport.AmbientCallback {}
 }

@@ -15,16 +15,16 @@
  */
 package com.example.android.wearable.wear.wearaccessibilityapp;
 
-import android.app.Activity;
 import android.graphics.drawable.Animatable2.AnimationCallback;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.wear.ambient.AmbientMode;
+import android.support.v4.app.FragmentActivity;
+import android.support.wear.ambient.AmbientModeSupport;
 import android.widget.ImageView;
 
-public class OpenOnPhoneAnimationActivity extends Activity
-        implements AmbientMode.AmbientCallbackProvider {
+public class OpenOnPhoneAnimationActivity extends FragmentActivity
+        implements AmbientModeSupport.AmbientCallbackProvider {
     private AnimationCallback mAnimationCallback;
     private AnimatedVectorDrawable mAnimatedVectorDrawablePhone;
 
@@ -33,7 +33,7 @@ public class OpenOnPhoneAnimationActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_on_phone_animation);
 
-        AmbientMode.attachAmbientSupport(this);
+        AmbientModeSupport.attach(this);
 
         mAnimationCallback =
                 new AnimationCallback() {
@@ -59,9 +59,9 @@ public class OpenOnPhoneAnimationActivity extends Activity
     }
 
     @Override
-    public AmbientMode.AmbientCallback getAmbientCallback() {
+    public AmbientModeSupport.AmbientCallback getAmbientCallback() {
         return new MyAmbientCallback();
     }
 
-    private class MyAmbientCallback extends AmbientMode.AmbientCallback {}
+    private class MyAmbientCallback extends AmbientModeSupport.AmbientCallback {}
 }
