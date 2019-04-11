@@ -16,9 +16,10 @@
 package com.example.android.wearable.wear.wearaccessibilityapp;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.wear.ambient.AmbientModeSupport;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.wear.ambient.AmbientModeSupport;
 
 public class RadioListActivity extends FragmentActivity implements
         AmbientModeSupport.AmbientCallbackProvider {

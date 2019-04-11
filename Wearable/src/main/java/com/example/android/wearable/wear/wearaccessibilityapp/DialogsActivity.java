@@ -20,8 +20,6 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.wear.ambient.AmbientModeSupport;
 import android.support.wearable.view.AcceptDenyDialog;
 import android.support.wearable.view.WearableDialogHelper.DialogBuilder;
 import android.view.LayoutInflater;
@@ -29,6 +27,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.wear.ambient.AmbientModeSupport;
 
 import java.util.ArrayList;
 import java.util.List;

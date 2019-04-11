@@ -17,13 +17,14 @@ package com.example.android.wearable.wear.wearaccessibilityapp;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.wear.ambient.AmbientModeSupport;
-import android.support.wear.widget.WearableRecyclerView;
-import android.support.wear.widget.drawer.WearableActionDrawerView;
 import android.view.View;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.wear.ambient.AmbientModeSupport;
+import androidx.wear.widget.WearableRecyclerView;
+import androidx.wear.widget.drawer.WearableActionDrawerView;
 
 import com.example.android.wearable.wear.wearaccessibilityapp.LongListRecyclerViewAdapter.SwitchChangeListener;
 

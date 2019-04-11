@@ -17,8 +17,9 @@ package com.example.android.wearable.wear.wearaccessibilityapp;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.wear.ambient.AmbientModeSupport;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.wear.ambient.AmbientModeSupport;
 
 public class ControlsActivity extends FragmentActivity implements
         AmbientModeSupport.AmbientCallbackProvider {

@@ -17,9 +17,10 @@ package com.example.android.wearable.wear.wearaccessibilityapp;
 
 import android.content.res.Resources.NotFoundException;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.wear.ambient.AmbientModeSupport;
 import android.widget.ImageView;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.wear.ambient.AmbientModeSupport;
 
 public class ZoomImageActivity extends FragmentActivity implements
         AmbientModeSupport.AmbientCallbackProvider {

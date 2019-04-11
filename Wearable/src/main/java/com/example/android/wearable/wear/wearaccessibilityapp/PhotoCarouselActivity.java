@@ -17,11 +17,12 @@ package com.example.android.wearable.wear.wearaccessibilityapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.wear.ambient.AmbientModeSupport;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.wear.ambient.AmbientModeSupport;
 
 public class PhotoCarouselActivity extends FragmentActivity implements
         AmbientModeSupport.AmbientCallbackProvider, OnClickListener {
